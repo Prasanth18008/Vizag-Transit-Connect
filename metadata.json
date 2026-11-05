@@ -1,0 +1,8 @@
+{
+  "name": "Remix APSRTC Visakha City Bus Live Track",
+  "description": "Live GPS tracking, real-time arrival schedules, multi-class bus search, and onboard passenger reporting for Visakhapatnam city buses in Telugu, English, and Hindi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

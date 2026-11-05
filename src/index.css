@@ -1,0 +1,106 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Telugu', 'Noto Sans Devanagari', system-ui, -apple-system, sans-serif;
+  }
+}
+
+.high-contrast {
+  filter: contrast(125%);
+}
+
+.high-contrast-mode {
+  --bg-primary: #000000;
+  --text-primary: #ffffff;
+}
+
+@keyframes gps-ripple {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.animate-gps-pulse {
+  animation: gps-ripple 2s infinite ease-out;
+}
+
+/* Google Maps Leaflet Custom Styles */
+.leaflet-container {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: #e5e3df;
+  isolation: isolate;
+  z-index: 1;
+}
+
+.leaflet-pane {
+  z-index: 2 !important;
+}
+
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 10 !important;
+}
+
+.leaflet-control-attribution {
+  font-size: 9px !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  color: #70757a !important;
+  border-radius: 4px;
+}
+
+@keyframes gmaps-pulse-radar {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+.animate-gmaps-radar {
+  animation: gmaps-pulse-radar 2.4s infinite cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes gmaps-beam-glow {
+  0%, 100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+.animate-gmaps-beam {
+  animation: gmaps-beam-glow 3s infinite ease-in-out;
+}
+
+@keyframes chevron-move {
+  0% {
+    stroke-dashoffset: 40;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-route-chevrons {
+  stroke-dasharray: 8 12;
+  animation: chevron-move 1.5s linear infinite;
+}
